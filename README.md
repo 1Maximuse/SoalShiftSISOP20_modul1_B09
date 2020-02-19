@@ -105,7 +105,7 @@ Untuk soal (a), (b), dan (c), hasil keluaran perintah disimpan dalam sebuah vari
 
 Pertama, untuk men-*generate* password sepanjang 28 karakter alfanumerik, digunakan perintah berikut.
 
-```
+```shell
 cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 28 | head -n 1 > `echo $1 | tr -dc 'a-zA-Z'`.txt
 ```
 
