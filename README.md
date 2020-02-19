@@ -158,7 +158,7 @@ Sama saja seperti *script* enkripsi, hanya saja set pertama dan set kedua dituka
 
 `grep -oP '(?<=[^ ] ).*(?=:.*:)'` untuk mengambil jamnya saja.
 
-## #3 &ndash; 
+## #3 &ndash; Cat
 > Source code: [soal3.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3.sh), [soal3_cron.txt](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3_cron.txt), [soal3_identify.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3_identify.sh)
 
 ---
