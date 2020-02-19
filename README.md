@@ -10,10 +10,10 @@ Kelompok B09
 
 Untuk bagian soal (a), diminta mencari satu *region* dengan *profit* paling minimal.
 
-Soal (a) dapat diselesaikan dengan program AWK sebagai berikut.
+Soal (a) dapat diselesaikan dengan program AWK menggunakan *field separator* karakter tab sebagai berikut.
 
 ```awk
-awk '
+awk -F '	' '
 {
 	if ($13 != "Region")
 		data[$13] += $21
@@ -22,11 +22,8 @@ END {
 	for (i in data) {
 		print data[i] " " i
 	}
-}' FPAT='([^,]*)|(".*")' Sample-Superstore.csv
+}' Sample-Superstore.tsv
 ```
-
-Pada data `Sample-Superstore.csv`, terdapat karakter koma yang tidak ingin dianggap sebagai *field separator* apabila berada di dalam tanda petik (`"`). Oleh karena itu, tidak cukup untuk menentukan *field separator* dengan argumen `-F`. Maka digunakan variabel `FPAT` yang merupakan variabel untuk menentukan konten setiap *field* yang valid dengan *regular expression*. `([^,]*)|(".*")` dalam *regex* berarti
-> (karakter apapun selain koma sejumlah 0 atau lebih) atau (dimulai dengan tanda petik, lalu karakter apapun sebanyak 0 atau lebih, dan diakhiri dengan tanda petik)
 
 Untuk setiap baris, perlu dicek apakah baris tersebut merupakan baris pertama (yang bukan merupakan data) dengan `if ($13 != "Region")`.
 
@@ -53,7 +50,7 @@ Output dari perintah AWK tersebut di-*pipe* ke dalam urutan perintah berikut.
 Soal (b) dapat diselesaikan dengan perintah AWK berikut.
 
 ```awk
-awk -v a="$a" '
+awk -F '	' -v a="$a" '
 $13 == a {
 	data[$11] += $21
 }
@@ -62,7 +59,7 @@ END {
 	for (i in data) {
 		print data[i] " " i
 	}
-}' FPAT='([^,]*)|(".*")' Sample-Superstore.csv
+}' Sample-Superstore.tsv
 ```
 
 Terdapat argumen `-v a="$a"` yang gunanya untuk memasukkan variabel *shell* ke dalam program AWK dengan nama "a".
@@ -78,7 +75,7 @@ Hasil perintah AWK tersebut di-*pipe* ke serangkaian perintah yang sama dengan s
 Soal (c) dapat diselesaikan dengan perintah AWK berikut.
 
 ```awk
-awk -v b="$b" '
+awk -F '	' -v b="$b" '
 BEGIN {
 	split(b, check, "\n")
 }
@@ -89,7 +86,7 @@ END {
 	for (i in data) {
 		print data[i] " " i
 	}
-}' FPAT='([^,]*)|(".*")' Sample-Superstore.csv
+}' Sample-Superstore.tsv
 ```
 
 Sekali lagi, perintah AWK sama persis dengan soal (b), hanya saja untuk setiap baris dilakukan pengecekan bahwa *state* sesuai dengan keluaran soal (b), dan *profit* dijumlahkan berdasarkan *product name*.
