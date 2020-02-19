@@ -1,6 +1,6 @@
 #!/bin/bash
 
-a=$(awk '
+a=$(awk -F '	' '
 {
 	if ($13 != "Region")
 		data[$13] += $21
@@ -9,10 +9,10 @@ END {
 	for (i in data) {
 		print data[i] " " i
 	}
-}' FPAT='([^,]*)|(".*")' Sample-Superstore.csv | sort -g -k 1 | grep -oP '(?<=[0-9.] ).*' | head -n 1)
+}' Sample-Superstore.tsv | sort -g -k 1 | grep -oP '(?<=[0-9.] ).*' | head -n 1)
 echo "Region dengan profit minimum:"
 echo "$a"
-b=$(awk -v a="$a" '
+b=$(awk -F '	' -v a="$a" '
 $13 == a {
 	data[$11] += $21
 }
@@ -21,10 +21,10 @@ END {
 	for (i in data) {
 		print data[i] " " i
 	}
-}' FPAT='([^,]*)|(".*")' Sample-Superstore.csv | sort -g -k 1 | grep -oP '(?<=[0-9.] ).*' | head -n 2)
+}' Sample-Superstore.tsv | sort -g -k 1 | grep -oP '(?<=[0-9.] ).*' | head -n 2)
 echo "State dengan profit minimum:"
 echo "$b"
-c=$(awk -v b="$b" '
+c=$(awk -F '	' -v b="$b" '
 BEGIN {
 	split(b, check, "\n")
 }
@@ -35,6 +35,6 @@ END {
 	for (i in data) {
 		print data[i] " " i
 	}
-}' FPAT='([^,]*)|(".*")' Sample-Superstore.csv | sort -g -k 1 | grep -oP '(?<=[0-9.] ).*' | tr -d '"' | head -n 10)
+}' Sample-Superstore.tsv | sort -g -k 1 | grep -oP '(?<=[0-9.] ).*' | tr -d '"' | head -n 10)
 echo "Produk dengan profit minimum:"
 echo "$c"
