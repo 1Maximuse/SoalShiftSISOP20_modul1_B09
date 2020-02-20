@@ -164,8 +164,11 @@ Untuk mendownload gambar, digunakan script `soal3.sh` berisi kode berikut.
 
 ```shell
 i=$(ls pdkt_kusuma_* | grep -o '[0-9]*' | sort -rn | head -n 1)
-i=$(($i+1))
-wget -O pdkt_kusuma_$i https://loremflickr.com/320/240/cat -a wget.log
+for ((x = 0; x < 28; x++))
+do
+	i=$(($i+1))
+	wget -O pdkt_kusuma_$i https://loremflickr.com/320/240/cat -a wget.log
+done
 ```
 
 Pertama, perintah `ls pdkt_kusuma_* | grep -o '[0-9]*' | sort -rn | head -n 1` mengambil indeks terakhir dari gambar-gambar yang sudah terdownload sebelumnya.
@@ -181,6 +184,8 @@ Pertama, perintah `ls pdkt_kusuma_* | grep -o '[0-9]*' | sort -rn | head -n 1` m
 Kemudian, nilai `i` ditambah 1.
 
 Kemudian gambar bisa didownload dan disimpan menyesuaikan dengan nilai `i`, dan output di-*append* ke file `wget.log`.
+
+Ini dilakukan sebanyak 28 kali untuk mendownload 28 gambar dari URL tersebut.
 
 ---
 
