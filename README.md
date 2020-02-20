@@ -4,7 +4,7 @@ Modul 1\
 Kelompok B09
 
 ## #1 &ndash; Pengolahan data Sample-Superstore.csv
-> Source code: [soal1.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal1.sh)
+> Source code: [soal1.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal1/soal1.sh)
 
 ---
 
@@ -96,7 +96,7 @@ Sekali lagi, perintah AWK sama persis dengan soal (b), hanya saja untuk setiap b
 Untuk soal (a), (b), dan (c), hasil keluaran perintah disimpan dalam sebuah variabel, sehingga dapat dicetak dengan `echo`, dan dapat digunakan untuk soal berikutnya.
 
 ## #2 &ndash; Caesar Cipher
-> Source code: [soal2.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal2.sh), [soal2_enkripsi.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal2_enkripsi.sh), [soal2_dekripsi.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal2_dekripsi.sh)
+> Source code: [soal2.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal2/soal2.sh), [soal2_enkripsi.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal2/soal2_enkripsi.sh), [soal2_dekripsi.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal2/soal2_dekripsi.sh)
 
 ---
 
@@ -156,7 +156,7 @@ Sama saja seperti *script* enkripsi, hanya saja set pertama dan set kedua dituka
 `grep -oP '(?<=[^ ] ).*(?=:.*:)'` untuk mengambil jamnya saja.
 
 ## #3 &ndash; Cat
-> Source code: [soal3.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3.sh), [soal3_cron.txt](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3_cron.txt), [soal3_identify.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3_identify.sh)
+> Source code: [soal3.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3/soal3.sh), [soal3_cron.txt](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3/soal3_cron.txt), [soal3_identify.sh](https://github.com/1Maximuse/SoalShiftSISOP20_modul1_B09/blob/master/soal3/soal3_identify.sh)
 
 ---
 
